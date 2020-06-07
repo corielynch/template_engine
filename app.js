@@ -1,22 +1,38 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee.js")
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+//Creates objects for each team member 
+const Jared = new Manager("Jared", 1, "jared@fakemail.com", 1);
+console.log(Jared);
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+const Alec = new Engineer("Alec", 2, "alec@fakemail.com", "ibealec");
+console.log(Alec);
+
+const Tammer = new Engineer("Tammer", 3, "tammer@fakemail.com", "tammerg");
+console.log(Tammer);
+
+const Christian = new Engineer("Christian", 4, "christian@fakemail.com", "ceckenrode");
+console.log(Christian);
+
+const John = new Intern("John", 5, "john@fakemail.com", "2University");
+console.log(John);
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+render([Employee.Jared, Employee.Alec, Employee.Tammer, Employee.Christian, Employee.John])
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
