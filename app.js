@@ -33,6 +33,15 @@ console.log(John);
 // generate and return a block of HTML including templated divs for each employee!
 
 render([Jared, Alec, Tammer, Christian, John]);
+fs.writeFile("output/team.html", outputPath, function(err) {
+
+    if (err) {
+      return console.log(err);
+    }
+  
+    console.log("Success!");
+  
+  });
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
