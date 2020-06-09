@@ -83,7 +83,7 @@ else {
 }
 
 
-var html = render([employee]);
+const html = render([employee]);
 fs.writeFile(outputPath, html, function(err) {
     
     if (err) {
